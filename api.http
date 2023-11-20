@@ -9,3 +9,17 @@ GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
 ### Recuperar todas las peliculas por genero
 
 GET http://localhost:1234/movies?genre=action
+
+### Crear una pelicula
+
+POST http://localhost:1234/movies 
+Content-Type: application/json
+
+{
+    "title": "Jurassic World",
+    "year": 2000,
+    "director": "Franco Caraffa",
+    "duration": 150,
+    "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
+    "genre": ["Action"]
+}
