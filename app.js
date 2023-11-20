@@ -9,6 +9,9 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/movies', (req, res)=>{
+    const { genre } = req.query
+    const filteredMovies = movies.filter(movie => movie.genre.some(g => g.toLowerCase() === genre.toLocaleLowerCase()))
+    if (genre) return res.json(filteredMovies)
     res.json(movies)
 })
 
